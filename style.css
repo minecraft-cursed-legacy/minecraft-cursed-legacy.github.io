@@ -1,16 +1,16 @@
 body {
-     background-image: url('background.png');
-     background-repeat: no-repeat;
-     background-size: cover;
-     font-family: Tahoma, Geneva, sans-serif;
-     color: white;
-     overflow-x: hidden;
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: white;
+    overflow-x: hidden;
 }
 
 .start {
-     background-image: url('modbiome.png');
-     background-repeat: no-repeat;
-     background-size: cover;
+    background-image: url('modbiome.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 	position: relative;
 	top: -20px;
 	width: 120%;
