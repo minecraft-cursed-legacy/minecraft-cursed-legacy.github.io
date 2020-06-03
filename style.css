@@ -40,3 +40,12 @@ hr {
 	text-align: center;
 	width: 84%;
 }
+
+#logo {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	border: 1px solid #d909d9;
+	opacity: 0.8;
+	width: 8%;
+}
