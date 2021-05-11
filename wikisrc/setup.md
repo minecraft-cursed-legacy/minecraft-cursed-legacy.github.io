@@ -38,3 +38,13 @@ There are three stages to refactoring the workspace:
 ### Refactor and Repackage Code.
 
 Use your IDE to refactor and repackage the code.
+
+## Step 5: Building the Mod.
+
+You can build your mod at any time with the command:
+
+
+> ./gradlew build
+
+
+Your built mod jar will be found in the ''build/libs'' folder.
