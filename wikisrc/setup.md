@@ -23,7 +23,6 @@ Note that you only need to run the rebuildLVT and genSources tasks when you use 
 
 > ./gradlew rebuildLVT genSources idea
 
-
 ## Step 3
 
 ```
