@@ -31,13 +31,17 @@ Note that you only need to run the ''rebuildLVT'' and ''genSources'' tasks when 
 
 ## Step 4: Personalising the Workspace
 
-Next, personalise the workspace. Because you're not gonna release your mod as "Example Mod" now, are you? This step is rather easy. Firstly, open the created project in your IDE. If you are using Intellij IDEA, I recommend firstly changing the build path to build with IDEA instead of gradle.
+Next, personalise the workspace. Because you're not gonna release your mod as "Example Mod" now, are you? This step is rather easy. Firstly, open the created project in your IDE. If you are using Intellij IDEA, I recommend changing the build path to build with IDEA instead of gradle.
 
 There are three stages to refactoring the workspace:
 
 ### Refactor and Repackage Code.
 
-Use your IDE to refactor and repackage the code.
+Firstly, your IDE to refactor and repackage the example mod code to suit your needs. It is strongly recommended to keep the mixin classes in a subpackage called "mixin". For example, if I am making a mod called "More Ores," I might want to change the root package to "com.example.moreores", and rename the main class from "ExampleMod" to "MoreOres".
+
+### Edit the mixins json
+
+### Edit fabric.mod.json
 
 ## Step 5: Building the Mod.
 
