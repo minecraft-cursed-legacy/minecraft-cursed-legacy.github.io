@@ -51,7 +51,10 @@ Otherwise, secondly, edit the mixins json. Firstly, rename it to follow the stan
 
 ### Edit fabric.mod.json
 
-Finally, the mod properties. Inside your **src/main/resources** folder, locate the ''fabric.mod.json'' file.
+Finally, the mod properties. Inside your **src/main/resources** folder, locate the ''fabric.mod.json'' file. Change the relevant properties, such as mod name, authors, licence, and mod id. However, keep in mind the two most important things to change:
+
+1. The "mixins" property. If you are not using mixins, delete this, otherwise change the value to specify the name you gave your mixin json.
+2. The "entrypoints" property. Locate the "init" property inside of "entrypoints", and change the value to the fully qualified name of your main mod class. For example, in our hypothetical More Ores mod, it would be changed to "com.example.moreores.MoreOres".
 
 ## Step 5: Building the Mod.
 
@@ -60,12 +63,3 @@ You can build your mod at any time with the command:
 > ./gradlew build
 
 Your built mod jar will be found in the build/libs folder.
-
-```
-public class ExampleClass {
-    public static void example(String[] args) {
-        int i = 0;
-        // e
-    }
-}
-```
