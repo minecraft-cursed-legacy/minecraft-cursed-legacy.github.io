@@ -29,6 +29,12 @@ Note that you only need to run the ''rebuildLVT'' and ''genSources'' tasks when 
 
 > ./gradlew rebuildLVT genSources idea
 
-## Step 4: 
+## Step 4: Personalising the Workspace
 
+Next, personalise the workspace. Because you're not gonna release your mod as "Example Mod" now, are you? This step is rather easy. Firstly, open the created project in your IDE. If you are using Intellij IDEA, I recommend firstly changing the build path to build with IDEA instead of gradle.
 
+There are three stages to refactoring the workspace:
+
+### Refactor and Repackage Code.
+
+Use your IDE to refactor and repackage the code.
