@@ -36,14 +36,20 @@
         <p>For example, if I were making a mod called "More Ores," I might want to change the root package to "com.example.moreores", rename the main class from "ExampleMod" to "MoreOres", and my mixin package would be "com.example.moreores.mixin".</p>
         <b>Edit the mixins json</b><br/>
         <p>If your mod does not use mixins, delete the example mixins json and skip this step.</p>
-        <p>Otherwise, secondly, edit the mixins json. Firstly, rename it to follow the standard provided pattern: "modid.mixins.json". For example, if I were making a "More Ores" mod, and my mod id were thus "more_ores", I would rename it to "more_ores.mixins.json".</p>
-        <p>Then, you need to edit the "package" property within the json to match the new package you put your mixins in. For example, in the aforementioned "More Ores" mod, I would set it to "com.example.moreores.mixin"</p>
+        <p>Otherwise, secondly, edit the mixins json. Firstly, rename it to follow the standard provided pattern: "modid.mixins.json". For example, if I were making a "More Ores" mod, and my mod id were thus "more_ores", I would rename it to "more_ores.mixins.json". Then, you need to edit the "package" property within the json to match the new package you put your mixins in. For example, in the aforementioned "More Ores" mod, I would set it to "com.example.moreores.mixin"</p>
         <b>Edit fabric.mod.json</b><br/>
         <p>Finally, the mod properties. Inside your <b>src/main/resources</b> folder, locate the <i>fabric.mod.json</i> file.</p>
         <h2>Step 5: Building the Mod.</h2>
         <p>You can build your mod at any time with the command:</p>
         <div class="quote">&nbsp;&nbsp;./gradlew build</div>
         <p>Your built mod jar will be found in the build/libs folder.</p>
+        <pre><code class="language-java">public class ExampleClass {
+    public static void example(String[] args) {
+        int i = 0;
+        // e
+    }
+}
+</code></pre></p>
         
 	    <p/>
       </div>

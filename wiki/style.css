@@ -152,13 +152,13 @@ pre[class*="language-"] {
 .token.keyword,
 .token.attr-name,
 .language-autohotkey .token.selector {
-    color: #00a4db;
+    color: #ab00db;
 }
 
 .token.function,
 .token.deleted,
 .language-autohotkey .token.tag {
-    color: #9a050f;
+    color: #5181b5;
 }
 
 .token.tag,

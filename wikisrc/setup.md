@@ -47,9 +47,7 @@ For example, if I were making a mod called "More Ores," I might want to change t
 
 If your mod does not use mixins, delete the example mixins json and skip this step.
 
-Otherwise, secondly, edit the mixins json. Firstly, rename it to follow the standard provided pattern: "modid.mixins.json". For example, if I were making a "More Ores" mod, and my mod id were thus "more_ores", I would rename it to "more_ores.mixins.json".
-
-Then, you need to edit the "package" property within the json to match the new package you put your mixins in. For example, in the aforementioned "More Ores" mod, I would set it to "com.example.moreores.mixin"
+Otherwise, secondly, edit the mixins json. Firstly, rename it to follow the standard provided pattern: "modid.mixins.json". For example, if I were making a "More Ores" mod, and my mod id were thus "more_ores", I would rename it to "more_ores.mixins.json". Then, you need to edit the "package" property within the json to match the new package you put your mixins in. For example, in the aforementioned "More Ores" mod, I would set it to "com.example.moreores.mixin"
 
 ### Edit fabric.mod.json
 
@@ -62,3 +60,12 @@ You can build your mod at any time with the command:
 > ./gradlew build
 
 Your built mod jar will be found in the build/libs folder.
+
+```
+public class ExampleClass {
+    public static void example(String[] args) {
+        int i = 0;
+        // e
+    }
+}
+```

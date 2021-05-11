@@ -179,10 +179,10 @@ for i in list(sys.argv)[1:]: # for each provided file
   # Tokenise
   print("--- Tokenising")
   for line in md[1:]:
-    line = line.strip()
+    line = line if greedytoken == "```" else line.strip() # Dumb hack to make code indent
     
     # Magic extra newline hack
-    if line == "":
+    if line == "" and not greedytoken == "```":
       if newLines:
         tokens.append(BREAK)
       newLines = True
