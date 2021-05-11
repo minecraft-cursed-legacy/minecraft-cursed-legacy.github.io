@@ -6,11 +6,11 @@ This tutorial will guide you through setting up a workspace. It will not tell yo
 
 Firstly, clone the example mod, which can be found {https://github.com/minecraft-cursed-legacy/Example-Mod|here}. You can either download the example mod from github as a ZIP and extract it somewhere locally, or use Git to clone the repository.
 
-## Step 2: Modifting the Gradle Properties:
+## Step 2: Personalising the Mod Properties
 
 Next, open the folder you have downloaded. 
 
-Modify the ''gradle.properties'' file
+Modify the ''gradle.properties'' file, and change the maven_group (usually your code package), archives_base_name (usually your mod id), and mod_version values to fit your mod.
 
 ## Step 3: Creating the Workspace
 
