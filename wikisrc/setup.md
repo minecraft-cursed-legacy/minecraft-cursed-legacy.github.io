@@ -37,9 +37,17 @@ There are three stages to refactoring the workspace:
 
 ### Refactor and Repackage Code.
 
-Firstly, your IDE to refactor and repackage the example mod code to suit your needs. It is strongly recommended to keep the mixin classes in a subpackage called "mixin". For example, if I am making a mod called "More Ores," I might want to change the root package to "com.example.moreores", and rename the main class from "ExampleMod" to "MoreOres".
+Firstly, your IDE to refactor and repackage the example mod code to suit your needs. It is strongly recommended to keep the mixin classes their own subpackage called "mixin".
+
+If your mod will not use mixins, you can delete the mixin.
+
+For example, if I were making a mod called "More Ores," I might want to change the root package to "com.example.moreores", rename the main class from "ExampleMod" to "MoreOres", and my mixin package would be "com.example.moreores.mixin".
 
 ### Edit the mixins json
+
+Next, edit the mixins json. Firstly, rename it to follow the standard pattern: "modid.mixins.json". For example, if I were making a "More Ores" mod, and my mod id were thus "more_ores", I would rename it to "more_ores.mixins.json".
+
+Then, you need to edit the "package" property within the json to match the new package you put the mixins in.
 
 ### Edit fabric.mod.json
 
@@ -47,8 +55,6 @@ Firstly, your IDE to refactor and repackage the example mod code to suit your ne
 
 You can build your mod at any time with the command:
 
-
 > ./gradlew build
 
-
-Your built mod jar will be found in the ''build/libs'' folder.
+Your built mod jar will be found in the build/libs folder.

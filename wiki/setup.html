@@ -15,20 +15,33 @@
       <div id="wikitext">
         <span id="title"><h1>Setting up a Workspace</h1></span>
         <p>This tutorial will guide you through setting up a workspace. It will not tell you how to install the Java Development Kit (JDK), or an IDE such as Eclipse or Intellij IDEA, as it is assumed you already have prior experience developing with java.</p>
-        <h2>Step 1</h2>
+        <h2>Step 1: Cloning the Example Mod</h2>
         <p>Firstly, clone the example mod, which can be found <a href="https://github.com/minecraft-cursed-legacy/Example-Mod">here</a>. You can either download the example mod from github as a ZIP and extract it somewhere locally, or use Git to clone the repository.</p>
-        <h2>Step 2</h2>
-        <p>Next, open the folder you have downloaded. Open the command prompt therein, and run one of these commands, depending on what IDE you use.</p>
-        <p>Note that you only need to run the rebuildLVT and genSources tasks when you use a new set of deobfuscation mappings, due to gradle caching the deobfuscated jars and sources jars. Therefore, provided you are using a plasma build you have used before, once you have already done this once, you will only need to provide the last parameter in the future.</p>
+        <h2>Step 2: Personalising the Mod Properties</h2>
+        <p>Next, open the folder you have downloaded.</p>
+        <p>Modify the <i>gradle.properties</i> file, and change the maven_group (usually your code package), archives_base_name (usually your mod id), and mod_version values to fit your mod.</p>
+        <h2>Step 3: Creating the Workspace</h2>
+        <p>Open the command prompt in the folder you have downloaded, and run one of these commands, depending on what IDE you use.</p>
+        <p>Note that you only need to run the <i>rebuildLVT</i> and <i>genSources</i> tasks when you use a new set of deobfuscation mappings, due to gradle caching the deobfuscated jars and sources jars. Therefore, provided you are using a plasma build you have used before, once you have already done this once, you will only need to provide the last parameter in the future.</p>
         <b>Eclipse</b><br/>
         <br/><div class="quote">&nbsp;&nbsp;./gradlew rebuildLVT genSources eclipse</div>
         <br/><b>Intellj IDEA</b><br/>
         <br/><div class="quote">&nbsp;&nbsp;./gradlew rebuildLVT genSources idea</div>
-        <h2>Step 3</h2>
-        <pre><code class="language-java">public class Test {
-}
-</code></pre></p>
-        <p><b>hi</b></p>
+        <h2>Step 4: Personalising the Workspace</h2>
+        <p>Next, personalise the workspace. Because you're not gonna release your mod as "Example Mod" now, are you? This step is rather easy. Firstly, open the created project in your IDE. If you are using Intellij IDEA, I recommend changing the build path to build with IDEA instead of gradle.</p>
+        <p>There are three stages to refactoring the workspace:</p>
+        <b>Refactor and Repackage Code.</b><br/>
+        <p>Firstly, your IDE to refactor and repackage the example mod code to suit your needs. It is strongly recommended to keep the mixin classes their own subpackage called "mixin".</p>
+        <p>If your mod will not use mixins, you can delete the mixin.</p>
+        <p>For example, if I were making a mod called "More Ores," I might want to change the root package to "com.example.moreores", rename the main class from "ExampleMod" to "MoreOres", and my mixin package would be "com.example.moreores.mixin".</p>
+        <b>Edit the mixins json</b><br/>
+        <p>Next, edit the mixins json. Firstly, rename it to follow the standard pattern: "modid.mixins.json". For example, if I were making a "More Ores" mod, and my mod id were thus "more_ores", I would rename it to "more_ores.mixins.json".</p>
+        <p>Then, you need to edit the "package" property within the json to match the new package you put the mixins in.</p>
+        <b>Edit fabric.mod.json</b><br/>
+        <h2>Step 5: Building the Mod.</h2>
+        <p>You can build your mod at any time with the command:</p>
+        <div class="quote">&nbsp;&nbsp;./gradlew build</div>
+        <p>Your built mod jar will be found in the build/libs folder.</p>
         
 	    <p/>
       </div>
