@@ -39,17 +39,21 @@ There are three stages to refactoring the workspace:
 
 Firstly, your IDE to refactor and repackage the example mod code to suit your needs. It is strongly recommended to keep the mixin classes their own subpackage called "mixin".
 
-If your mod will not use mixins, you can delete the mixin.
+If your mod will not use mixins, you can delete the example mixin and ignore the stuff about mixin packages.
 
 For example, if I were making a mod called "More Ores," I might want to change the root package to "com.example.moreores", rename the main class from "ExampleMod" to "MoreOres", and my mixin package would be "com.example.moreores.mixin".
 
 ### Edit the mixins json
 
-Next, edit the mixins json. Firstly, rename it to follow the standard pattern: "modid.mixins.json". For example, if I were making a "More Ores" mod, and my mod id were thus "more_ores", I would rename it to "more_ores.mixins.json".
+If your mod does not use mixins, delete the example mixins json and skip this step.
 
-Then, you need to edit the "package" property within the json to match the new package you put the mixins in.
+Otherwise, secondly, edit the mixins json. Firstly, rename it to follow the standard provided pattern: "modid.mixins.json". For example, if I were making a "More Ores" mod, and my mod id were thus "more_ores", I would rename it to "more_ores.mixins.json".
+
+Then, you need to edit the "package" property within the json to match the new package you put your mixins in. For example, in the aforementioned "More Ores" mod, I would set it to "com.example.moreores.mixin"
 
 ### Edit fabric.mod.json
+
+Finally, the mod properties. Inside your **src/main/resources** folder, locate the ''fabric.mod.json'' file.
 
 ## Step 5: Building the Mod.
 
