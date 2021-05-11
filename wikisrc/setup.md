@@ -10,11 +10,13 @@ Firstly, clone the example mod, which can be found {https://github.com/minecraft
 
 Next, open the folder you have downloaded. 
 
-## Step 3: Setting up the Workspace
+Modify the ''gradle.properties'' file
+
+## Step 3: Creating the Workspace
 
 Open the command prompt in the folder you have downloaded, and run one of these commands, depending on what IDE you use.
 
-Note that you only need to run the rebuildLVT and genSources tasks when you use a new set of deobfuscation mappings, due to gradle caching the deobfuscated jars and sources jars. Therefore, provided you are using a plasma build you have used before, once you have already done this once, you will only need to provide the last parameter in the future.
+Note that you only need to run the ''rebuildLVT'' and ''genSources'' tasks when you use a new set of deobfuscation mappings, due to gradle caching the deobfuscated jars and sources jars. Therefore, provided you are using a plasma build you have used before, once you have already done this once, you will only need to provide the last parameter in the future.
 
 ### Eclipse
 
@@ -27,6 +29,6 @@ Note that you only need to run the rebuildLVT and genSources tasks when you use 
 
 > ./gradlew rebuildLVT genSources idea
 
-## Step 3
+## Step 4: 
 
 
