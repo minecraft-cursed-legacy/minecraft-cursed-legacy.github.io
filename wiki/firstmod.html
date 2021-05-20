@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wiki</title>
+	<meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body style="position: absolute; width:100%">
+	<div id="head">
+	  <a href="index.html"><img id="logo" src="logo.png" width = "8%"></a>
+	  <p id="wikiname">Minecraft Cursed Legacy Docs</p>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+    <div id="body">
+      <div id="wikitext">
+        <span id="title"><h1>Your First Mod</h1></span>
+        <p>Hello, again! Welcome to a tutorial on creating your first mod with fabric for beta 1.7.3 on Minecraft Cursed Legacy.</p>
+        <p>This tutorial will assume you <a href="setup.html">already have a mod workspace set up</a>.</p>
+        <h2>Modifying the properties of the game!</h2>
+        <p>To start, we will be editing the code in our mod's ModInitializer.</p>
+        <p>Let's start with a very simple mod, since it is our first mod, after all. We will modify the maximum stack size of sticks to be 8, so that players cannot have a stack with more than 8 sticks.</p>
+        <p>Change the code in your mod initialiser so that it adds this line:</p>
+        <pre><code class="language-java">ItemType.stick.setMaxStackSize(8);
+</code></pre></p>
+        <p>So your mod initialiser's <i>onInitialize</i> method should look something like this:</p>
+        <pre><code class="language-java">@Override
+public void onInitialize() {
+    // whatever other initialisation code your mod has goes here
+    ItemType.stick.setMaxStackSize(8); // set stick max stack size to 8
+}
+</code></pre></p>
+        <p>You can now run the modded game in your development environment through your IDE or ./gradlew runClient, and you should see that you can no longer stack sticks above a stack size of 8!</p>
+        <p>I'll go over this in detail, for those to whom this is not self explanatory:</p>
+        <p>- onInitialize() is called when the game first loads</p>
+        <p>- in this method, we access "ItemType.stick", which contains properties for the type of item known as "stick" (i.e. a stick)</p>
+        <p>- we invoke the setter for the max stack size on this item when we call ".setMaxStackSize(8)". This sets the properties for this type of item to have the maximum stack size of 8.</p>
+        <h2>Configuration</h2>
+        <p>But what if we want our players to be able to configure the stack size?</p>
+        <p>No problem! We can use Cursed Legacy API's config library, which uses the ZoesteriaConfig library, to achieve this.</p>
+        <b>Create a config template</b><br/>
+        <p>Firstly, we want default values in case the value does not exist in the config yet or the config has not been created:</p>
+        <pre><code class="language-java">ConfigTemplate defaults = ConfigTemplate.builder()
+  .addDataEntry("stick_stack_size", 8) // default max stack size of 8
+  .build();
+</code></pre></p>
+        <p>Then, we load or create the config:</p>
+        <pre><code class="language-java">Id configId = new Id("modid", "stack_sizes");
+Container config = Configs.loadOrCreate(configId, defaults);
+</code></pre></p>
+        <p>Now, we can modify our stack size modifying line to use the value configured:</p>
+        <pre><code class="language-java">ItemType.stick.setMaxStackSize(config.getIntegerValue("stick_stack_size"));
+</code></pre></p>
+        <p>And now the default stick stack size should be 8, but it can be modified by changing the config! (albeit you have to restart the game for changes to apply)</p>
+        
+	    <p/>
+      </div>
+    </div>
+  </body>
+</html>

@@ -45,4 +45,22 @@ No problem! We can use Cursed Legacy API's config library, which uses the Zoeste
 Firstly, we want default values in case the value does not exist in the config yet or the config has not been created:
 
 ```
-C
+ConfigTemplate defaults = ConfigTemplate.builder()
+  .addDataEntry("stick_stack_size", 8) // default max stack size of 8
+  .build();
+```
+
+Then, we load or create the config:
+
+```
+Id configId = new Id("modid", "stack_sizes");
+Container config = Configs.loadOrCreate(configId, defaults);
+```
+
+Now, we can modify our stack size modifying line to use the value configured:
+
+```
+ItemType.stick.setMaxStackSize(config.getIntegerValue("stick_stack_size"));
+```
+
+And now the default stick stack size should be 8, but it can be modified by changing the config! (albeit you have to restart the game for changes to apply)
