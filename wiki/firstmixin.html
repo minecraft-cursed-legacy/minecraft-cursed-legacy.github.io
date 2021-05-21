@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wiki</title>
+	<meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body style="position: absolute; width:100%">
+	<div id="head">
+	  <a href="index.html"><img id="logo" src="logo.png" width = "8%"></a>
+	  <p id="wikiname">Minecraft Cursed Legacy Docs</p>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+    <div id="body">
+      <div id="wikitext">
+        <span id="title"><h1>Your First Mixin</h1></span>
+        <p>Hello, again! Welcome to a tutorial on creating your first mixin for beta 1.7.3.</p>
+        <p>This tutorial will assume you <a href="setup.html">already have a mod workspace set up</a>.</p>
+        <h2>So what is mixin, anyway?</h2>
+        <p>Mixin is a framework that allows you to modify minecraft's source code using bytecode manipulation. It doesn't require you to know JVM bytecode to use it, but it's much easier if you have an understanding of how it works. Though that is beyond the purpose of this tutorial.</p>
+        <p>All mixins must be declared in your [modid].mixins.json file, as per the explanation on <a href="setup.html">the setup page</a>, and as demonstrated in the example mod mixin.</p>
+        <h2>The Example Mod Mixin</h2>
+        <p>Let's take a quick look at the Cursed Legacy Example Mod mixin:</p>
+        <pre><code class="language-java">@Mixin(TitleScreen.class)
+public class ExampleMixin {
+	@Inject(at = @At("HEAD"), method = "init()V")
+	private void init(CallbackInfo info) {	
+		System.out.println("This line is printed by an example mod mixin!");
+	}
+}
+</code></pre></p>
+        <p>Woah woah, that's a lot to break down, so let's go through it step by step.</p>
+        <div class="quote">&nbsp;&nbsp;@Mixin(TitleScreen.class)</div>
+        <p>This marker on the class tells mixin what code class we are injecting our code into. In this case, we are modifying the code of the title screen.</p>
+        <p>-- Tutorial to be continued later --</p>
+        
+	    <p/>
+      </div>
+    </div>
+  </body>
+</html>
