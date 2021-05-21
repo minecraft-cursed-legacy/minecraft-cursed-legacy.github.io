@@ -53,3 +53,6 @@ This format follows the standard for an INJECT mixin. Please Note the following:
 So, we want to actually do some stuff with our mixin, right? First of all, I will lay out what our tutorial mixin we are constructing in this section we will do. We will add a new button at the bottom of the title screen that exits the game. Simple, concise, and allows me to demonstrate some basic mixin concepts easily.
 
 == Tutorial incomplete. It should be finished later today. ==
+
+
+{firstmod.html|Previous Tutorial}

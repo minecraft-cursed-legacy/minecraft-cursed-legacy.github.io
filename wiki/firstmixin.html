@@ -37,7 +37,7 @@ public class ExampleMixin {
         <p>"@Inject" tells mixin we are injecting code into the game (as opposed to overwriting or modifying existing code).</p>
         <p>"method = "init()V" tells mixin what method we are injecting into - that is, into the method called 'init' that takes no parameters and has a void return value. We could also just specify it as <b>method = "init"</b> in this instance, since there is only one method in that class with that name. However, if you are injecting into a method which shares its name with multiple other methods in that class, it is recommended to give mixin the full method signature.</p>
         <p>"at = @At("HEAD")" tells mixin that our injection is to happen at the head of the method we are injecting into. That is, at the beginning of the method.</p>
-        <div class="quote">&nbsp;&nbsp;private void init(CallbackInfo info) <a href="</div>
+        <div class="quote">&nbsp;&nbsp;private void init(CallbackInfo info)</div>
         <p>This format follows the standard for an INJECT mixin. Please Note the following:</p>
         <p>- the method is not static, because the TitleScreen.init method is not static.</p>
         <p>- the method is private. This isn't a problem for instance methods, but if it were a static method, you would be required by mixin to make the INJECT method private</p>
@@ -46,6 +46,7 @@ public class ExampleMixin {
         <h2>Making our mixin a bit more active</h2>
         <p>So, we want to actually do some stuff with our mixin, right? First of all, I will lay out what our tutorial mixin we are constructing in this section we will do. We will add a new button at the bottom of the title screen that exits the game. Simple, concise, and allows me to demonstrate some basic mixin concepts easily.</p>
         <p>== Tutorial incomplete. It should be finished later today. ==</p>
+        <br/><p><a href="firstmod.html">Previous Tutorial</a></p>
         
 	    <p/>
       </div>

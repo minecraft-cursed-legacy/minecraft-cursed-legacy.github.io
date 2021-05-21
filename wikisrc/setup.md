@@ -63,3 +63,6 @@ You can build your mod at any time with the command:
 > ./gradlew build
 
 Your built mod jar will be found in the build/libs folder.
+
+
+{firstmod.html|Next Tutorial}
