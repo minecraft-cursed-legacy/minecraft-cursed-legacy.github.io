@@ -40,7 +40,7 @@ This marker on the method tells mixin how we are modifying the code.
 
 "at = @At("HEAD")" tells mixin that our injection is to happen at the head of the method we are injecting into. That is, at the beginning of the method.
 
-> private void init(CallbackInfo info) {	
+> private void init(CallbackInfo info)	
 
 This format follows the standard for an INJECT mixin. Please Note the following:
 - the method is not static, because the TitleScreen.init method is not static.
