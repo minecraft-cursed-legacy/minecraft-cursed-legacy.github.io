@@ -66,4 +66,4 @@ ItemType.stick.setMaxStackSize(config.getIntegerValue("stick_stack_size"));
 And now the default stick stack size should be 8, but it can be modified by changing the config! (albeit you have to restart the game for changes to apply)
 
 
-{setup.html|Previous Tutorial} -- {firstmixin.html|Next Tutorial}
+{setup.html|Previous Tutorial} --  {index.html|Home} -- {firstmixin.html|Next Tutorial}

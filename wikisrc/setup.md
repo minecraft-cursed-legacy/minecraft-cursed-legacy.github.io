@@ -65,4 +65,4 @@ You can build your mod at any time with the command:
 Your built mod jar will be found in the build/libs folder.
 
 
-{firstmod.html|Next Tutorial}
+{index.html|Home} -- {firstmod.html|Next Tutorial}
