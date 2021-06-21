@@ -63,9 +63,19 @@ The first parameter is the item to set the translated name of, and the second pa
 
 A simple 16x16 item texture can be easily applied to the using the 1.1.0 texture/model api (which uses chocohead's item atlas api under the hood for applying generated item models).
 
-Simply create 4 nested folders in your src/main/resources directory: ''assets/modid/textures/item/'' (where modid is your mod id, as used in the id of the item). Inside the final "item" folder, put the 16x16 texture you want to use for the item, with the name as provided in your mod id (excluding the first bit). So for modid:my_item, the file name would be "my_item.png".
+Simply create 4 nested folders in your src/main/resources directory: ''assets/modid/textures/item/'' (where modid is your mod id, as used in the id of the item). Inside the final "item" folder, put the 16x16 texture you want to use for the item, with the name as provided in your mod id (i.e. excluding the namespace). So for modid:my_item, the file name would be "my_item.png".
 
 And that's it. You should have the item texture in game now!
+
+## Final Notes and on Obtaining your Item
+
+Obtaining your item could prove difficult if you don't have a creative-mode mod in your workspace, so a simple way to obtain your item for testing would be to add a simple recipe.
+
+As an example, a simple shapeless recipe that takes 1 dirt and gives your item could be added as such:
+
+```
+Recipes.addShapelessRecipe(new ItemInstance(myItem), Tile.DIRT);
+```
 
 For further reference, check out {https://github.com/minecraft-cursed-legacy/Cursed-Legacy-API/tree/v1/legacy-textures-v1/src/test/|the texture api test mod}
 

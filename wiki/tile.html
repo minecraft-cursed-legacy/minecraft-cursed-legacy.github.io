@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wiki</title>
+	<meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body style="position: absolute; width:100%">
+	<div id="head">
+	  <a href="index.html"><img id="logo" src="logo.png" width = "8%"></a>
+	  <p id="wikiname">Minecraft Cursed Legacy Docs</p>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+    <div id="body">
+      <div id="wikitext">
+        <span id="title"><h1>Adding an Item</h1></span>
+        <p>Welcome to the tutorial on adding a tile to beta minecraft with Minecraft Cursed Legacy using Cursed Legacy API!</p>
+        <p>Tiles, also known as "Blocks" in more modern versions of the game, are a key part of minecraft. From dirt to jukeboxes, logs to diamond ore, they form the world, and are the key means of interaction between the player and the world.</p>
+        <p>Luckily, creating and Registering custom Tiles with Cursed Legacy API is only slightly more complex than adding an item.</p>
+        <h2>Step 1: The Tile</h2>
+        <p>First, as with the items, create a field in your mod somewhere to store the tile.</p>
+        <pre><code class="language-java">public static Tile myTile;
+</code></pre></p>
+        <p>Then create a class for your tile. A basic tile class might look like this:</p>
+        <pre><code class="language-java">public class MyCustomTile extends Tile {
+  public MyCustomTile(int id) {
+    super(id, Material.ORGANIC);
+    this.hardness(1.0f);
+    this.sounds(GRASS_SOUNDS);
+    this.name("myCustomTile");
+  }
+}
+</code></pre></p>
+        <p>Let's go over what each part does.</p>
+        <div class="quote">&nbsp;&nbsp;public MyCustomTile(int id)</div>
+        <p>We create a constructor that takes the internal integer tile id which will be provided by cursed legacy api's registries.</p>
+        <div class="quote">&nbsp;&nbsp;super(id, Material.ORGANIC);</div>
+        <p>This id must be passed to the super constructor for tile, along with the material to which this tile belongs. In this example, I have picked Material.ORGANIC, which is used for leaves, grass, etc.</p>
+        <div class="quote">&nbsp;&nbsp;this.hardness(1.0f);</div>
+        <p>This sets the hardness of the tile to 1.0f. This affects the time it takes to mine, and the blast resistance.</p>
+        <div class="quote">&nbsp;&nbsp;this.sounds(GRASS_SOUNDS);</div>
+        <p>This sets the sounds that this tile makes when walked on and broken/placed. In this case, we have picked the grass block sounds.</p>
+        <div class="quote">&nbsp;&nbsp;this.name("myCustomTile");</div>
+        <p>This sets the name for the translation key. In this case, the generated translation key will be "tile.myCustomTile.name"</p>
+        <h2>Instantising and Registering the Tile</h2>
+        <p>Let's now register the tile.</p>
+        <p>Initialise the field you created in your mod initialiser, like such:</p>
+        <pre><code class="language-java">myTile = Registries.TILE.register(new Id("modid:my_tile"), MyCustomTile::new);
+</code></pre></p>
+        <p>This is very similar to how registering an item works, which is broken down and explained in the previous tutorial. The key differences is that we are using the TILE registry, and because our tile's constructor directly matches the signature of the initialisation function, we can use a method reference instead of a normal lambda.</p>
+        <p>However, of course, a normal lambda would still work if you'd prefer: Registries.TILE.register(new Id("modid:my_tile"), id -> new MyCustomTile(id))</p>
+        <h2>Tile Item</h2>
+        <p>Chances are, you want your tile to have an associated placeable item. This is not done automatically, and will need to be created separately. Luckily, Cursed Legacy API provides a method to do this in just one line!</p>
+        <pre><code class="language-java">TileItems.registerTileItem(new Id("modid:my_tile"), myTile);
+</code></pre></p>
+        <p>The Id provided to the <i>registerTileItem</i> method should ideally be identical to the one you use for the tile, however, this is not required.</p>
+        <h2>Translated Name</h2>
+        <p>This follows pretty simply from how you do it for items in the previous tutorial. We use addTileTranslation instead of addItemTranslation.</p>
+        <pre><code class="language-java">Translations.addTileTranslation(myTile, "My Tile");
+</code></pre></p>
+        <p>The first parameter is the tile to set the translated name of, and the second parameter is the name to set it as having.</p>
+        <h2>Tile Texture</h2>
+        <p>A simple 16x16 cube-all or cross texture can be easily applied to the using the 1.1.0 texture/model api. This api uses paulevs' <a href="https://github.com/paulevsGitch/B.1.7.3-CoreLib">corelib</a> library under the hood to apply the detected models. If you're interested in making more complex models, or even using OBJ models, then you may be interested in learning how to use corelib directly.</p>
+        <p>To add a tile texture for a simple cube-all tile, make sure you have a set of nested folders in your src/main/resources directory with the structure: <i>assets/modid/textures/tile/</i> (where modid is your mod id, as used in the id of the tile). Inside the final "tile" folder, put the 16x16 texture you want to use for the item, with the name as provided in your mod id (i.e. excluding the namespace). So for modid:my_tile, the file name would be "my_tile.png".</p>
+        <p>This should be enough to add a basic cube-all texture!</p>
+        <p>This can be switched to a cross or grass-like texture shape by adding a relevant model file (check out the example texture-api mod, linked near the end of the page, to see how that is done).</p>
+        <h2>Final Notes and on Obtaining your Tile</h2>
+        <p>Obtaining your item could prove difficult if you don't have a creative-mode mod in your workspace, so a simple way to obtain your item for testing would be to add a simple recipe.</p>
+        <p>As an example, a simple shapeless recipe that takes 1 sand and gives your tile could be added as such:</p>
+        <pre><code class="language-java">Recipes.addShapelessRecipe(new ItemInstance(myTile), Tile.SAND);
+</code></pre></p>
+        <p>For further reference, check out <a href="https://github.com/minecraft-cursed-legacy/Cursed-Legacy-API/tree/v1/legacy-textures-v1/src/test/">the texture api test mod</a></p>
+        <p><a href="item.html">Previous Tutorial: Adding an Item</a> -- <a href="index.html">Home</a></p>
+        
+	    <p/>
+      </div>
+    </div>
+  </body>
+</html>
