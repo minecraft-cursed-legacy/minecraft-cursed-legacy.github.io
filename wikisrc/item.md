@@ -1,4 +1,4 @@
-Adding an Item | Minecraft Cursed Legacy Docs
+Adding a Tile | Minecraft Cursed Legacy Docs
 
 Welcome to the tutorial on adding an item to beta minecraft with Minecraft Cursed Legacy using Cursed Legacy API!
 
