@@ -16,7 +16,8 @@
         <span id="title"><h1>Adding a Biome</h1></span>
         <p>Welcome to the tutorial on adding a biome to beta minecraft with Minecraft Cursed Legacy using Cursed Legacy API!</p>
         <p>This tutorial is split into 2 major sections: Creating the biome, and Making it generate in the world.</p>
-        <h2>1. Creating the biome</h2>
+        <h1>1. Creating the biome</h1>
+        <h2>Biome Class</h2>
         <p>The first thing you are going to want is your biome class.</p>
         <p>Make a class that extends Biome. In this you are going to want to create a constructor in order to set various properties of the biome, such as the name, and if it snows or is rainless. You can also edit the spawn lists: <i>this.monsters</i>, <i>this.creatures</i>, and <i>this.waterCreatures</p>
         <p></i>. The spawn lists will have the normal creatures at their normal spawn rates by default.</p>
@@ -39,10 +40,22 @@
     }
 }
 </code></pre></p>
+        <h2>Cursed Legacy API Biome Extensions</h2>
+        <p>Cursed Legacy API also offers more extensions to the biomes, and even more are to come in the future.</p>
+        <p>These are provided by implementing the interface <b>ExtendedBiome</b> on your biome class.</p>
+        <b>getTreesPerChunk</b><br/>
+        <p>You can set the number of trees per chunk by overriding this method from ExtendedBiome. This does not affect the extra tree that vanilla places in 1/10 chunks.</p>
+        <p>For example, in our Snow Forest biome, we want around 6 trees per chunk. Therefore we will add this code to the SnowForest biome class:</p>
+        <pre><code class="language-java">@Override
+public int getTreesPerChunk() {
+    return 6;
+}
+</code></pre></p>
+        <h2>Creating the Field</h2>
         <p>Next, you need to create a field to store your biome in somewhere. In this case we will just create it in our main class. This step is straightforward, as there is no registration for biomes in beta 1.7.3 minecraft.</p>
         <pre><code class="language-java">public static final Biome SNOW_FOREST = new SnowForest();
 </code></pre></p>
-        <h2>2. Adding the biome to the world</h2>
+        <h1>2. Adding the biome to the world</h1>
         <br/><h2>Conclusion</h2>
         <p>I haven't finished this yet</p>
         <p>In the meantime please reference the example biome code <a href="https://github.com/minecraft-cursed-legacy/Cursed-Legacy-API/blob/v1/legacy-terrain-v1/src/test/java/io/github/minecraftcursedlegacy/test/LevelGenTest.java#L39-L54">here</a> and <a href="https://github.com/minecraft-cursed-legacy/Cursed-Legacy-API/blob/v1/legacy-terrain-v1/src/test/java/io/github/minecraftcursedlegacy/test/TestBiome.java">here</a></p>

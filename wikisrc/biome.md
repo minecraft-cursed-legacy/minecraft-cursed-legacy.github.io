@@ -4,7 +4,9 @@ Welcome to the tutorial on adding a biome to beta minecraft with Minecraft Curse
 
 This tutorial is split into 2 major sections: Creating the biome, and Making it generate in the world.
 
-## 1. Creating the biome
+# 1. Creating the biome
+
+## Biome Class
 
 The first thing you are going to want is your biome class.
 
@@ -38,13 +40,34 @@ public class SnowForest extends Biome {
 }
 ```
 
+## Cursed Legacy API Biome Extensions
+
+Cursed Legacy API also offers more extensions to the biomes, and even more are to come in the future.
+
+These are provided by implementing the interface **ExtendedBiome** on your biome class.
+
+### getTreesPerChunk
+
+You can set the number of trees per chunk by overriding this method from ExtendedBiome. This does not affect the extra tree that vanilla places in 1/10 chunks.
+
+For example, in our Snow Forest biome, we want around 6 trees per chunk. Therefore we will add this code to the SnowForest biome class:
+
+```
+@Override
+public int getTreesPerChunk() {
+    return 6;
+}
+```
+
+## Creating the Field
+
 Next, you need to create a field to store your biome in somewhere. In this case we will just create it in our main class. This step is straightforward, as there is no registration for biomes in beta 1.7.3 minecraft.
 
 ```
 public static final Biome SNOW_FOREST = new SnowForest();
 ```
 
-## 2. Adding the biome to the world
+# 2. Adding the biome to the world
 
 
 ## Conclusion
