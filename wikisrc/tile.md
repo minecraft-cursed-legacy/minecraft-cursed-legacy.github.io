@@ -104,4 +104,4 @@ Recipes.addShapelessRecipe(new ItemInstance(myTile), Tile.SAND);
 
 For further reference, check out {https://github.com/minecraft-cursed-legacy/Cursed-Legacy-API/tree/v1/legacy-textures-v1/src/test/|the texture api test mod}
 
-{item.html|Previous Tutorial: Adding an Item} -- {index.html|Home}
+{item.html|Previous Tutorial: Adding an Item} -- {biome.html|Next Tutorial: Adding a Biome}
