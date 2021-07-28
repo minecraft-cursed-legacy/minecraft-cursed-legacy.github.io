@@ -116,7 +116,7 @@ BiomePlacementCallback.EVENT.register((temperature, humidity, biomeSetter) -> {
 });
 ```
 
-## Conclusion
+# Conclusion
 
 Biomes in Beta 1.7.3 are very different to modern biomes, however, they are still easily added, and can be a great way to enhance the worldgen of worlds.
 
