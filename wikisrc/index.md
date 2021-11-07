@@ -23,3 +23,4 @@ The following is a list of tutorials related to Tiles and Items.
 The following is a list of tutorials related to World Generation.
 
 {biome.html|Adding a Biome}
+{worldtype.html|Making a World Type}
