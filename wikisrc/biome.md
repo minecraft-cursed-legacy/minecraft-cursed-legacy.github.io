@@ -120,6 +120,7 @@ BiomePlacementCallback.EVENT.register((temperature, humidity, biomeSetter) -> {
 
 Biomes in Beta 1.7.3 are very different to modern biomes, however, they are still easily added, and can be a great way to enhance the worldgen of worlds.
 
+# Additional Resources
 
 The example mod for the terrain module of Cursed Legacy API provides an excellent up-to-date reference on the biome generator. 
 - {https://github.com/minecraft-cursed-legacy/Cursed-Legacy-API/blob/v1/legacy-terrain-v1/src/test/java/io/github/minecraftcursedlegacy/test/LevelGenTest.java#L39-L54|Relevant main class code.}
