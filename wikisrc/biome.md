@@ -125,4 +125,4 @@ The example mod for the terrain module of Cursed Legacy API provides an excellen
 - {https://github.com/minecraft-cursed-legacy/Cursed-Legacy-API/blob/v1/legacy-terrain-v1/src/test/java/io/github/minecraftcursedlegacy/test/LevelGenTest.java#L39-L54|Relevant main class code.}
 - {https://github.com/minecraft-cursed-legacy/Cursed-Legacy-API/blob/v1/legacy-terrain-v1/src/test/java/io/github/minecraftcursedlegacy/test/TestBiome.java|Relevant biome class code}
 
-{tile.html|Previous Tutorial: Adding a Tile} -- {index.html|Home} -- {worldtype.html|Next Tutorial: Making a World Type}
+{tile.html|Previous Tutorial: Adding a Tile} -- {index.html|Home} -- {worldtype.html|Next Tutorial: Creating a World Type}

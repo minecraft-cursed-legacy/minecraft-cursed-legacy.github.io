@@ -1,6 +1,7 @@
 Setting up a Workspace | Minecraft Cursed Legacy Docs
 
 This tutorial will guide you through setting up a workspace. It will not tell you how to install the Java Development Kit (JDK), or an IDE such as Eclipse or Intellij IDEA, as it is assumed you already have prior experience developing with java.
+Cursed Legacy is designed to work with Java 8 and Java 11, so if you have JDK 16+ installed, you will either need an older version of the JDK, or to update gradle to gradle 7+.
 
 ## Step 1: Cloning the Example Mod
 
