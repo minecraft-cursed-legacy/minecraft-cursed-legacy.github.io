@@ -52,12 +52,12 @@ protected void shapeChunk(int chunkX, int chunkZ, byte[] tiles, Biome[] biomes) 
   for (int localX = 0; localX < 16; localX++) {
     for (int localZ = 0; localZ < 16; localZ++) {
       for (int y = 0; y <= localHeight; y++) {
-        tiles[getIndex(localX, y, localZ)] = (byte) Tile.STONE.getId();
+        tiles[getIndex(localX, y, localZ)] = (byte) Tile.STONE.id;
       }
 
       if (height < 63) {
         for (int y = 63; y > height; y--) { // fill blocks from y=63 to just above sea level with water when height dips below sea level
-          tiles[getIndex(localX, y, localZ)] = (byte) Tile.STILL_WATER.getId();
+          tiles[getIndex(localX, y, localZ)] = (byte) Tile.STILL_WATER.id;
         }
       }
     }
