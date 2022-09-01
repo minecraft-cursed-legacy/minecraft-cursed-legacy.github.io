@@ -6,6 +6,16 @@ body {
 	background-color: #f9f9f9;
 }
 
+a {
+	color: #4d80e0;
+}
+a:visited {
+	color: #4d80e0;
+}
+a:hover {
+	color: #fd80e0;
+}
+
 /* =====================
    =       MENU        =
    ===================== */
@@ -43,6 +53,10 @@ body {
 	padding-right: 30px;
 	border-left: 1px solid #666;
 	border-right: 1px solid #666;
+}
+
+.header-link:visited {
+	color: white;
 }
 
 .github-link {
@@ -165,16 +179,6 @@ h2 {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: justify;
-}
-
-a {
-	color: #4d80e0;
-}
-a:visited {
-	color: #4d80e0;
-}
-a:hover {
-	color: #fd80e0;
 }
 
 a.real-download-button {
