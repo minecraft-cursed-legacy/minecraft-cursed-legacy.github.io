@@ -1,51 +1,222 @@
 body {
-    background-image: url('background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: Tahoma, Geneva, sans-serif;
-    color: white;
-    overflow-x: hidden;
+	width: 100%;
+	margin: 0px;
+	font-family: 'Lato', Helvetica, sans-serif;
+
+	background-color: #f9f9f9;
 }
 
-.start {
-    background-image: url('modbiome.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-	position: relative;
-	top: -20px;
-	width: 120%;
+/* =====================
+   =       MENU        =
+   ===================== */
+ 
+#menu {
+	background-color: #333;
+	vertical-align: middle;
+	position: sticky;
+	width: 100%;
+}
+
+#menu-image-container {
+	margin-left: 2%;
+	margin-right: 10%;
+}
+
+#menu img {
+	width: 50px;
+	vertical-align: middle;
+	padding-bottom: 7px;
+}
+
+.header-link {
+	color: white;
+	text-decoration: none;
+	font-size: large;
+	text-align: center;
+
+	/* Magic Centering Hack */
+	height: 60px;
+	line-height: 60px;
+
+	/* Spacing & Border Lines */
+	padding-left: 30px;
+	padding-right: 30px;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+}
+
+.github-link {
+	color: white;
+	text-decoration: none;
+	font-size: large;
+	text-align: center;
+
+	/* Magic Centering Hack */
+	height: 60px;
+	line-height: 60px;
+}
+
+/* ===================
+   =     BANNER      =
+   =================== */
+ 
+#banner {
+	background-image: url('logos/banner.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	top: 60px;
+	width: 100%;
+	height: 47vh;
+
+	border-bottom: 16px solid #333;
+}
+
+@media (max-aspect-ratio: 9/6) {
+	#banner {
+		background-image: url('logos/banner-small.png');
+	}
+}
+
+/* ====================
+   =       BODY       =
+   ==================== */
+
+#main-body {
+	text-align: center;
+	font-size: 2vh;
+}
+
+h1 {
+	font-weight: normal;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 4.5vh;
+	margin-bottom: 5px;
+	margin-top: 50px;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 3vh;
+}
+
+
+#underline {
+	width: 36%;
+	height: 6px;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	border-top: 1px solid #333;
+}
+
+#underline2 {
+	width: 28%;
+	height: 6px;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	border-top: 1px solid #333;
+}
+
+#underline3 {
+	width: 18%;
+	height: 5px;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	border-top: 1px solid #333;
+}
+
+#key-points {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.section {
+	width: 33.333%;
+	min-width: 200px;
+}
+
+@media (max-width: 750px) {
+	.section {
+		width: 100%;
+		margin-top: 10px;
+	}
+}
+
+.section p {
+	min-height: 50px;
+}
+
+#finale {
+	margin-top: 50px;
+	width: 67%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
 }
 
 a {
-	color: #4ce0d1;
-	font-weight: bold;
+	color: #4d80e0;
+}
+a:visited {
+	color: #4d80e0;
+}
+a:hover {
+	color: #fd80e0;
+}
+
+a.real-download-button {
 	text-decoration: none;
 }
 
-#special {
-	height: 12px;
+#download-button {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-color: #D86CEE;
+	color: #f9f9f9;
+
+	width: 33%;
+	height: 100px;
+	line-height: 100px;
+	border-radius: 0;
 }
 
-hr {
-	border: none;
-	height: 4px;
-	color: #d9d9d9; /* internet explorer */
-	width: 120%;
-	background-color: #d9d9d9;
-	position: relative;
-	left: -20px;
+#thicc-download-button {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-color: #D86CEE;
+	color: #f9f9f9;
+
+	width: 70%;
+	height: 80px;
+	line-height: 80px;
+	border-radius: 0;
 }
 
-.center {
-	text-align: center;
-	width: 84%;
+#footer {
+	color: #eee;
+	background-color: #333;
+	height: 50px;
+	line-height: 50px;
+	padding-left: auto;
+	padding-right: auto;
 }
 
-#logo {
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	border: 1px solid #d909d9;
-	opacity: 0.8;
-	width: 8%;
-}
