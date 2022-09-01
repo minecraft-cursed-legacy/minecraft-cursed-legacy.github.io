@@ -60,6 +60,11 @@ a:hover {
 }
 
 .github-link {
+	float: right;
+	margin-right: 2%;
+}
+
+.github-link a {
 	color: white;
 	text-decoration: none;
 	font-size: large;
@@ -68,6 +73,25 @@ a:hover {
 	/* Magic Centering Hack */
 	height: 60px;
 	line-height: 60px;
+}
+
+.github-link a:visited {
+	color: white;
+}
+
+.github-link img {
+	width: 30%;
+}
+
+@media (max-width: 850px) {
+	.github-link img {
+		display: none;
+	}
+
+	.github-link {
+		float:inherit;
+		margin-left: 25px;
+	}
 }
 
 /* ===================
